@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+option java_package = "com.example.grpc";
+option java_outer_classname = "ServicesProto";
+
+service UserService {
+    rpc getUserById (UserRequest) returns (UserResponse);
+}
+
+service ProductService {
+    rpc getProductById (ProductRequest) returns (ProductResponse);
+}
+
+message UserRequest {
+    string user_id = 1;
+}
+
+message UserResponse {
+    string user_id = 1;
+    string name = 2;
+    string email = 3;
+}
+
+message ProductRequest {
+    string product_id = 1;
+}
+
+message ProductResponse {
+    string product_id = 1;
+    string name = 2;
+    double price = 3;
+}

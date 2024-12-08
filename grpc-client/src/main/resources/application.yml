@@ -1,0 +1,8 @@
+grpc:
+    client:
+        user-service:
+        address: static://localhost:8080
+        enable-keep-alive: true
+        product-service:
+        address: static://localhost:8081
+        enable-keep-alive: true

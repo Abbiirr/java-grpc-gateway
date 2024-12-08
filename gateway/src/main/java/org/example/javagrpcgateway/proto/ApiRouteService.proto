@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.brainstation.grpc;
+
+service ApiRouteService {
+    rpc GetApiRoute (ApiRouteRequest) returns (ApiRouteResponse);
+}
+
+message ApiRouteRequest {
+    string path = 1;
+}
+
+message ApiRouteResponse {
+    string uri = 1;
+}
