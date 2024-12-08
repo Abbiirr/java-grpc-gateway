@@ -1,7 +1,7 @@
 package org.example.service;
 
-import com.example.grpc.ServicesProto;
-import com.example.grpc.ServicesProto.ProductServiceGrpc;
+import com.example.productservice.ProductServiceProto;
+import com.example.productservice.ProductServiceGrpc;
 import io.grpc.stub.StreamObserver;
 import net.devh.boot.grpc.server.service.GrpcService;
 
@@ -9,9 +9,8 @@ import net.devh.boot.grpc.server.service.GrpcService;
 public class ProductServiceImpl extends ProductServiceGrpc.ProductServiceImplBase {
 
     @Override
-    public void getProductById(ServicesProto.ProductRequest request, StreamObserver<ServicesProto.ProductResponse> responseObserver) {
-        // Mocking product data
-        ServicesProto.ProductResponse response = ServicesProto.ProductResponse.newBuilder()
+    public void getProductById(ProductServiceProto.ProductRequest request, StreamObserver<ProductServiceProto.ProductResponse> responseObserver) {
+        ProductServiceProto.ProductResponse response = ProductServiceProto.ProductResponse.newBuilder()
                 .setProductId(request.getProductId())
                 .setName("Sample Product")
                 .setPrice(19.99)
